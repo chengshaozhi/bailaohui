@@ -28,6 +28,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     	String token = request.getHeader("token");
     	System.out.println("11111");
     	System.out.println("22222222222222222333333333");
+    	System.out.println("444444444444444444");
     	if (token != null) {
     		AdminUserEntity entity = adminUserDao.findByToken(token);
     		if (entity!=null) {
