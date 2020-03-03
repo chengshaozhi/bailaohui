@@ -26,8 +26,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
     	String token = request.getHeader("token");
-    	System.out.println("11111");
-    	
+    	System.out.println("**************");
     	if (token != null) {
     		AdminUserEntity entity = adminUserDao.findByToken(token);
     		if (entity!=null) {
@@ -39,6 +38,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     		if("OPTIONS".equals(request.getMethod())){
     			return true;
     		}else{
+    			System.out.println("******");
     			returnJson(response,"没有获取到token");
     		}
 		}

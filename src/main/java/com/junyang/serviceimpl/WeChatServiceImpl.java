@@ -1,13 +1,11 @@
 package com.junyang.serviceimpl;
-
-import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.bind.annotation.RestController;
 import com.junyang.service.WeChatService;
 
+@RestController
 public class WeChatServiceImpl implements WeChatService {
 
 	@Override
-	@ResponseBody
 	public String access(String signature, String timestamp, String nonce, String echostr) {
 		System.out.println("微信加密签名" + signature);
 		System.out.println("时间戳" + timestamp);

@@ -16,6 +16,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**")//拦截哪些路径("/**":代表拦截所有路径);
-        		.excludePathPatterns("/admin/login"); //不拦截哪些路径;	
+        		.excludePathPatterns("/admin/login","/wechat/access"); //不拦截哪些路径;	
     }
 }
